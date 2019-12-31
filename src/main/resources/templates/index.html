@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <a href="/getusers">aa</a>
+    <a th:href="@{/add}">asadad</a>
+    <form th:action="@{/add}" th:object="${admin}" method="get">
+        用户姓名：<input type="text" th:field="*{aname}"  /><br />
+        用户密码：<input type="text" th:field="*{apassword}"  /><br />
+        <input type="submit" value="提交" />
+    </form>
+<a href="/save">save</a>
+</body>
+</html>

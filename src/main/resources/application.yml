@@ -1,0 +1,56 @@
+server:
+    port: 8080
+spring:
+    servlet:
+        multipart:
+            enabled: true
+            max-file-size: 10MB
+            file-size-threshold: 10MB
+    datasource:
+        driver-class-name: com.mysql.jdbc.Driver
+        url: jdbc:mysql://127.0.0.1:3306/test?useUnicode=true&characterEncoding=UTF-8&serverTimezone=UTC
+        username: root
+        password: 1234
+        type: com.alibaba.druid.pool.DruidDataSource
+        platform: h2
+        initialization-mode: always
+    thymeleaf:
+        cache: false
+        mode: HTML
+        prefix: classpath:/templates/
+        encoding: UTF-8
+        suffix: .html
+        servlet:
+            content-type: text/html
+    resources:
+        static-locations: classpath:/META-INF/resources/,classpath:/resources/,classpath:/template/css/,classpath:/templates/js/,classpath:/static/,classpath:/public/,classpath:/test/,classpath:/templates/,classpath:/templates/index
+    jpa:
+        database: MySQL
+        database-platform: org.hibernate.dialect.MySQL5InnoDBDialect
+        show-sql: true
+        hibernate:
+            ddl-auto: update
+    main:
+        allow-bean-definition-overriding: true
+    h2:
+        console:
+            enabled: true
+            path: /h2
+    redis:
+        database: 0
+        host: localhost
+        port: 6379
+        password: root
+        jedis:
+            pool:
+                max-active: 8
+                max-wait: 1
+                max-idle: 8
+                min-idle: 0
+        timeout: 300
+mybatis:
+    type-aliases-package: com.grizzly.pojo
+    mapper-locations: classpath:mapper/*.xml
+logging:
+    level:
+        com.grizzly.mapper: debug
