@@ -16,8 +16,8 @@ spring:
         initialization-mode: always
     thymeleaf:
         cache: false
-        mode: HTML
         prefix: classpath:/templates/
+        mode: HTML
         encoding: UTF-8
         suffix: .html
         servlet:

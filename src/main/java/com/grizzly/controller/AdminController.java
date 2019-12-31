@@ -22,7 +22,7 @@ public class AdminController {
 //    @RequestMapping("/")
 //    public String toIndex() {
 //        System.out.println("访问根目录");
-//        return "forward:examples/index.html";
+//        return "index";
 //    }
 
 
